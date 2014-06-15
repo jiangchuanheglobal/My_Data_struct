@@ -3,6 +3,10 @@
 #include <math.h>
 #include "heap.h"
 
+/*
+ * extract_min is referred from wiki
+ *
+ */
 static 
 void swap(int* a, int* b) {
 	int tmp;
@@ -43,42 +47,30 @@ insert(struct Heap* hp, int key) {
 
 void
 extract_min(struct Heap* hp, int* key) {
-	int i, left, right;
+	int i, child;
+	int lastelem;
 
 	if (hp->size > 0) {
 		*key = hp->node[0];
-		i = 0;
-		while ((i+1) * 2 - 1 < hp->size){
-			left = (i+1) * 2 - 1; 
-			right = (i+1) * 2;
-
-			/*
-			 * note: we have two conditions.
-			 */
-
-			// only one child
-			if (right >= hp->size) {
-				hp->node[i] = hp->node[left];
-				i = left;
-				break;
+		lastelem = hp->node[--hp->size];
+		for (i = 0; i * 2 + 1 <= hp->size; i = child) {
+			child = i * 2 + 1;
+			if (child != hp->size && hp->node[child + 1] < hp->node[child]) {
+				child++; // select right child
 			}
-		
-			// two children, check which one is smaller 
-			else if (hp->node[left] < hp->node[right]) {
-				hp->node[i] = hp->node[left];
-				i = left;
+			if (lastelem > hp->node[child]) {
+				hp->node[i] = hp->node[child];
 			}
 			else {
-				hp->node[i] = hp->node[right];
-				i = right;
-			}
+				break; // we find a place for last element, it's current i which satisfy lastelement < child < child's brother
+							/*
+							 *        i
+							 *      /   \
+							 *    child 
+							 */
+			} 
 		}
-
-		// adjust the leaf level
-		for(; i+1 < hp->size; i++ ) {
-			hp->node[i] = hp->node[i+1];
-		}
-		hp->size = hp->size - 1;
+		hp->node[i] = lastelem;	
 	}
 }
 
