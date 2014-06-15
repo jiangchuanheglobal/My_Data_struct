@@ -1,36 +1,19 @@
-#include "queue.h"
-
+//#include "queue.h"
+#include <stdio.h>
+#include "heap.h"
 int main() {
-	int val;
-	struct Queue* q = create_queue(20);
-	enqueue(q, 0);
-	enqueue(q, 3);
-	enqueue(q, 2);
-	enqueue(q, 8);
-	enqueue(q, 10);
-	enqueue(q, 12);
-
-	enqueue(q, 12);
-	enqueue(q, 0);
-	enqueue(q, 3);
-	enqueue(q, 2);
-	enqueue(q, 8);
-	enqueue(q, 10);
-	enqueue(q, 0);
-	enqueue(q, 3);
-	enqueue(q, 2);
-	enqueue(q, 8);
-	enqueue(q, 10);
-
-//	dequeue(q, &val);
-//	dequeue(q, &val);
-//	dequeue(q, &val);
-//	dequeue(q, &val);
-//	dequeue(q, &val);
-	while (!is_empty(q)) {
-		dequeue(q, &val);
-		printf("dequeue: %d\n",val);
-	}
-	//print_queue(q);
-	destroy_queue(q);
+	int min;
+	struct Heap* hp = create_min_heap(10);
+	insert(hp, 6);
+	insert(hp, 7);
+	insert(hp, 12);
+	insert(hp, 10);
+	insert(hp, 15);
+	insert(hp, 17);
+	insert(hp, 5);
+//	insert(hp, 0);
+	print_heap(hp);
+	//extract_min(hp, &min);
+	//print_heap(hp);
+	destroy_min_heap(hp);
 }

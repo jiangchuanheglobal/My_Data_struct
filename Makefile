@@ -1,4 +1,4 @@
-SRC = main.c queue.c
+SRC = main.c heap.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)
