@@ -1,19 +1,26 @@
 //#include "queue.h"
 #include <stdio.h>
-#include "heap.h"
+#include "priority_queue.h"
 int main() {
-	int min;
-	struct Heap* hp = create_min_heap(10);
-	insert(hp, 5);
-	insert(hp, 6);
-	insert(hp, 7);
-	insert(hp, 15);
-	insert(hp, 10);
-	insert(hp, 17);
-//	insert(hp, 0);
-	extract_min(hp, &min);
-	print_heap(hp);
-	//extract_min(hp, &min);
-	//print_heap(hp);
-	destroy_min_heap(hp);
+	int id, key;
+	struct PQueue* pq = create_pqueue(20);
+
+	insert(pq, 0, 5);
+	insert(pq, 1, 14);
+	insert(pq, 2, 23);
+	insert(pq, 3, 32);
+	insert(pq, 4, 41);
+	insert(pq, 5, 87);
+	insert(pq, 6, 90);
+	insert(pq, 7, 50);
+	insert(pq, 8, 64);
+	insert(pq, 9, 53);
+	
+		
+	extract_min(pq, &id, &key);
+	extract_min(pq, &id, &key);
+	printf("extract min - id:%d-key:%d \n", id, key);
+	print_pqueue(pq);
+//	print_pqueue(pq);
+	destroy_pqueue(pq);
 }

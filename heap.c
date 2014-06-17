@@ -38,8 +38,8 @@ insert(struct Heap* hp, int key) {
 	int i, p;
 	if (hp->size < hp->capacity) {
 		hp->node[hp->size] = key;
-		for(i = hp->size; hp->node[i / 2 - 1] > hp->node[i] && (i/2-1) >=	0; i = i / 2 - 1) {
-			swap(&hp->node[i / 2 - 1], &hp->node[i]);
+		for(i = hp->size; hp->node[(i - 1) / 2] > hp->node[i] && ((i - 1) / 2) >=	0; i = (i - 1) / 2) {
+			swap(&hp->node[(i - 1) / 2], &hp->node[i]);
 		}
 		hp->size = hp->size + 1;
 	}
