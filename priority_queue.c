@@ -60,7 +60,9 @@ insert(struct PQueue* pq, int id, int key) {
 void 
 decrease_key(struct PQueue* pq, int id, int key) {
 	int i;
-  for (i = pq->map[id]; (i-1) / 2  >= 0 && pq->element[(i-1) / 2].key > pq->element[i].key; i = (i-1) / 2) {
+	i = pq->map[id];
+	pq->element[i].key = key;
+  for (; (i-1) / 2  >= 0 && pq->element[(i-1) / 2].key > pq->element[i].key; i = (i-1) / 2) {
 		swap(&pq->element[i], &pq->element[(i-1) / 2]);
 		int_swap(&pq->map[pq->element[i].id], &pq->map[pq->element[(i-1) / 2].id]);
 	}
