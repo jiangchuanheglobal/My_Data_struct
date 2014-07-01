@@ -2,7 +2,7 @@
 //#define _REPRE_H
 
 /*
- * graph representation
+ * unweighted graph representation
  * using adjacency list
  *
  */

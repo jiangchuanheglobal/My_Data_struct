@@ -1,5 +1,5 @@
 /*
- * graph representation
+ * unweighted graph representation
  * referred from: http://www.geeksforgeeks.org/graph-and-its-representations/
  */
 
