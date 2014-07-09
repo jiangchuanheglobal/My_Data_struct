@@ -1,4 +1,4 @@
-SRC = main.c priority_queue.c
+SRC = main.c trie.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)
