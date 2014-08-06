@@ -1,4 +1,4 @@
-SRC = main.c trie.c
+SRC = main.c linkedlist.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)
