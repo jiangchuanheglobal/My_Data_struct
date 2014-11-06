@@ -1,4 +1,4 @@
-SRC = main.c linkedlist.c
+SRC = main.c SegmentTree.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)
@@ -7,4 +7,3 @@ main: $(SRC)
 
 clean:
 	rm main
-	rm -r
