@@ -1,31 +1,13 @@
-data structure implementation
-==============================
+My data structure repo
+=======================
 
-primitive
------------------------------
-Actually, array and linked structure are the foundation of all
-kinds of high level data structures. High level structure can be built
-using array and linked structures in three ways, they are
+very primitive design and implementation
 
-1. only using array
-2. only using linked structure
-3. hybrid using of array and linked structure
+What inside this repo 
 
-note: some data structures can only be built based on only one of them, which means
-      this particular data structure cannot choose all of them at will.
+* basic data structure implementations
+ - linear list (list, stack, queue)
+ - tree based
+ - graph
 
-basic
---------------------------
-
-1. stack
-2. link
-3. queue
-
-### circular array implementation ###
-
-4. tree
-
-advanced
---------------------------
-
-1. heap
+* summary

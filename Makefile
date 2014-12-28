@@ -1,4 +1,4 @@
-SRC = main.c SegmentTree.c
+SRC = main.c deque.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)
